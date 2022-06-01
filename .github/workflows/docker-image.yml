@@ -1,7 +1,4 @@
 --- 
-jobs: 
-  build: 
-    runs-on: ubuntu-latest
 name: "Docker Image CI"
 steps: 
   - 
