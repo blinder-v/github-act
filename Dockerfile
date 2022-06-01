@@ -2,7 +2,7 @@ FROM node
 
 
 WORKDIR /app
-COPY ["client/package.json", "client/package-lock.json", "./client/"]
+COPY ["server/package.json", "server/package-lock.json", "./server/"]
 RUN npm install
 COPY . .
 EXPOSE 3000
