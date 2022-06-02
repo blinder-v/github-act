@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build:
+build:
 
   runs-on: ubuntu-latest
 
@@ -23,6 +23,6 @@ jobs:
     run: |
 
   - name: Build the Docker image
-  run: docker build . --file docker-compose.yml --tag my-image-name:$(date +%s)
+    run: docker build . --file docker-compose.yml --tag my-image-name:$(date +%s)
   - name: Docker Push
-  run: docker push ${{ secrets.DOCKER_USER }}/nodejs-react-fromgithubact
+    run: docker push ${{ secrets.DOCKER_USER }}/nodejs-react-fromgithubact
