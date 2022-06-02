@@ -14,15 +14,15 @@ jobs:
 
   steps:
 
-    - uses: actions/checkout@v3
-    - name: docker login
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USER }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-      run: |
+  - uses: actions/checkout@v3
+  - name: docker login
+    uses: docker/login-action@v1
+    with:
+      username: ${{ secrets.DOCKER_USER }}
+      password: ${{ secrets.DOCKER_PASSWORD }}
+    run: |
 
-     - name: Build the Docker image
-     run: docker build . --file docker-compose.yml --tag my-image-name:$(date +%s)
-   - name: Docker Push
-     run: docker push ${{ secrets.DOCKER_USER }}/nodejs-react-fromgithubact
+  - name: Build the Docker image
+  run: docker build . --file docker-compose.yml --tag my-image-name:$(date +%s)
+  - name: Docker Push
+  run: docker push ${{ secrets.DOCKER_USER }}/nodejs-react-fromgithubact
